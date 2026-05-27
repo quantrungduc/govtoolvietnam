@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Times New Roman", Times, "Times New Roman (Vietnamese)", serif;
+}
+
+/* Force Times New Roman ONLY on document textareas, outputs, and administrative content */
+textarea, 
+.font-mono,
+pre, 
+code,
+.document-content,
+.checked-result,
+.editorial-text,
+#the_thuc_editor_result,
+#spelling_editor_result,
+#transcript_editor_result {
+  font-family: "Times New Roman", Times, "Times New Roman (Vietnamese)", serif !important;
+}
+
+/* Page containers & text mapping to clean white/light theme corresponding to screenshot */
+body, #app_root, .bg-\[\#0a0a16\] {
+  background-color: #fafbfc !important;
+  background-image: none !important;
+  color: #1e293b !important;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Remove dark glowing background elements from AI dark theme */
+.blur-\[120px\], .blur-\[150px\], .blur-\[100px\], .blur-\[90px\], 
+[class*="bg-purple-900/15"], [class*="bg-blue-900/15"], [class*="bg-indigo-800/10"], [class*="bg-rose-900/10"],
+.bg-radial-gradient {
+  display: none !important;
+}
+
+/* GOV HEADER BRANDING - PERFECT MATCH WITH SCREENSHOT */
+#gov_header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+#logo_group {
+  gap: 16px !important;
+}
+
+#national_emblem {
+  box-shadow: 0 4px 15px rgba(204, 28, 24, 0.25) !important;
+  width: 64px !important;
+  height: 64px !important;
+  border: 3px solid #f59e0b !important; /* Gold crest ring */
+  background: linear-gradient(135deg, #d32f2f, #b71c1c) !important;
+}
+
+#app_title {
+  color: #1e293b !important; /* Elegant slate-900 matching screenshot */
+  font-family: "Inter", system-ui, -apple-system, sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+}
+
+#app_title span {
+  color: #1e293b !important; /* Replicates "GovTools Vietnam" as black/slate from screenshot */
+}
+
+#app_subtitle {
+  color: #64748b !important; /* Gray standard text */
+  font-family: "Inter", system-ui, -apple-system, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* HIDE OR REMOVE THE BADGE TRASH AS SEEN IN THE SCREENSHOT */
+#security_status_card {
+  display: none !important; /* Hidden for pristine clean alignment matching screenshot header */
+}
+
+/* DYNAMIC TABBED NAVIGATION */
+#gov_nav {
+  background-color: #cc1c18 !important; /* Administrative Vietnam Core Red color corresponding to screenshot */
+  border-bottom: none !important;
+  box-shadow: 0 4px 12px rgba(204, 28, 24, 0.15) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+}
+
+#nav_container {
+  max-width: 1200px !important;
+  padding: 0 !important;
+}
+
+#nav_grid {
+  display: flex !important;
+  width: 100% !important;
+  align-items: stretch !important;
+}
+
+#nav_grid button {
+  flex: 1 !important;
+  color: #ffffff !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  border-bottom: none !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.2s ease-in-out !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border-radius: 0 !important;
+}
+
+/* Remove last border of tabs */
+#nav_grid button:last-child {
+  border-right: none !important;
+}
+
+/* Active Tab Style corresponding to Screenshot (Darker red background, no gold border) */
+#nav_grid button[class*="bg-white/10"], 
+#nav_grid button.bg-white\/10,
+button#nav_tab_dang.active-tab-css,
+button#nav_tab_chinh_quyen.active-tab-css,
+button#nav_tab_tai_nguyen.active-tab-css,
+button#nav_tab_guide.active-tab-css {
+  background-color: #a81a17 !important; /* Darker red matching the screenshot */
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  font-weight: 700 !important;
+}
+
+#nav_grid button:hover {
+  background-color: #b01815 !important;
+  color: #ffffff !important;
+}
+
+/* HERO BANNER SECTION - BEIGE/OFF-WHITE WITH HIGH CONTRAST */
+#hero_banner {
+  background-color: #fafbfc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+#hero_title {
+  color: #0c0a09 !important; /* Soft deep black */
+  font-family: "Inter", system-ui, -apple-system, sans-serif !important;
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+
+#hero_description {
+  color: #4b5563 !important; /* Deep gray sub-description */
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  max-width: 650px !important;
+}
+
+/* Buttons inside Hero Section matching screenshot */
+#hero_btn_start, .btn-primary-red {
+  background: #cc1c18 !important; /* Solid red */
+  color: #ffffff !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 6px -1px rgba(204, 28, 24, 0.15), 0 2px 4px -1px rgba(204, 28, 24, 0.1) !important;
+  border: 1px solid #cc1c18 !important;
+  transition: all 0.2s ease !important;
+}
+
+#hero_btn_start:hover, .btn-primary-red:hover {
+  background: #b01815 !important;
+  border-color: #b01815 !important;
+}
+
+#hero_btn_info, .btn-outline-red {
+  background: #ffffff !important;
+  color: #cc1c18 !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  border: 1.5px solid #cc1c18 !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease !important;
+}
+
+#hero_btn_info:hover, .btn-outline-red:hover {
+  background: #fef2f2 !important;
+}
+
+/* OUTSTANDING TOOLS AND CARDS SECTION */
+#workspace_viewport {
+  max-width: 1200px !important;
+}
+
+#outstanding_tools {
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-top: 10px !important;
+}
+
+/* Card layout on the grid */
+#tools_grid > div {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#tools_grid > div:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04) !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Icon box inside card to match screenshot (perfect white bg with thin boundary) */
+#tools_grid > div .w-12.h-12 {
+  background-color: #ffffff !important;
+  color: #cc1c18 !important;
+  border: 1px solid #f1f5f9 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 12px !important;
+  width: 48px !important;
+  height: 48px !important;
+}
+
+#tools_grid h4 {
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #1e293b !important;
+  margin-top: 12px !important;
+}
+
+#tools_grid p {
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 12px !important;
+  color: #475569 !important;
+  line-height: 1.5 !important;
+}
+
+/* Card Button starting active style */
+#tools_grid button, 
+#tools_grid a[role="button"] {
+  background-color: #cc1c18 !important;
+  color: #ffffff !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+  margin-top: 16px !important;
+  border: none !important;
+  transition: all 0.2s ease !important;
+}
+
+#tools_grid button:hover {
+  background-color: #b01815 !important;
+}
+
+/* Glass panels transition to soft white administrative sheets */
+.backdrop-blur-md, .backdrop-blur-xl, 
+[class*="bg-white/5"], [class*="bg-white/2"], 
+.bg-white\/5, .bg-white\/2, 
+div[id="workspace_viewport"] > div, 
+div[id="workspace_viewport"] > motion\.div {
+  background-color: #ffffff !important;
+  backdrop-filter: none !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #1e293b !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Active analytical sheets and details */
+.bg-black\/45, .bg-black\/30, .bg-[#000000]\/45, .bg-black\/50, [class*="bg-black/"] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+}
+
+/* Labels & badges */
+span.bg-red-500\/10 {
+  background-color: #fee2e2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fca5a5 !important;
+}
+
+/* LOWER THREE SECTIONS (NEWS / GUIDE & FEEDBACK) */
+#lower_three_sections > div {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03) !important;
+}
+
+/* Title left red accent lines */
+#lower_three_sections h3 {
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  color: #0f172a !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+#lower_three_sections h3 span.bg-\[\#cc1c18\] {
+  background-color: #cc1c18 !important;
+  width: 4px !important;
+  height: 18px !important;
+  border-radius: 4px !important;
+  margin-right: 8px !important;
+}
+
+#lower_three_sections .text-xs,
+#lower_three_sections .text-sm {
+  font-family: "Inter", system-ui, sans-serif !important;
+}
+
+/* Inputs on feedback standard */
+#lower_three_sections input, 
+#lower_three_sections textarea {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  border-radius: 8px !important;
+}
+
+#lower_three_sections input:focus, 
+#lower_three_sections textarea:focus {
+  border-color: #cc1c18 !important;
+  outline: none !important;
+}
+
+#lower_three_sections button[type="submit"] {
+  background-color: #cc1c18 !important;
+  color: #ffffff !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+#lower_three_sections button[type="submit"]:hover {
+  background-color: #b01815 !important;
+}
+
+/* FOOTER SECTION BRANDING MATCH */
+#gov_footer {
+  background-color: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+  color: #64748b !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 12px !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+#gov_footer a, #gov_footer span {
+  font-family: "Inter", system-ui, sans-serif !important;
+  color: #64748b !important;
+}
+
+#gov_footer a:hover {
+  color: #cc1c18 !important;
+}
+
+/* Additional layout alignments to get identical look as screenshot */
+.pointer-events-auto {
+  cursor: pointer !important;
+}

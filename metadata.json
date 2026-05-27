@@ -1,0 +1,6 @@
+{
+  "name": "Công chức Số",
+  "description": "Hệ thống Tiện ích Công chức Việt Nam - Trợ lý số chuyên nghiệp, bảo mật hỗ trợ soạn thảo, rà soát và tối ưu hóa công tác hành chính.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
